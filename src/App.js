@@ -1,5 +1,5 @@
 
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import './index.css'
@@ -10,10 +10,10 @@ import NewPost from "./NewPost";
 import PostPage from "./PostPage";
 import Missing from "./Missing";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
-import {format, set} from "date-fns";
 
-import Post from "./Post";
+import {format} from "date-fns";
+
+
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
  let [post,setpost]=useState( JSON.parse(localStorage.getItem("todo")))
 
  let [search,setsearch]=useState('')
- let [searchresult,setsearchresult]=useState();
+
  let [posttitle,setposttitle]=useState('')
  let [postbody,setpostbody]=useState('')
  let handledelete=(id)=>{
