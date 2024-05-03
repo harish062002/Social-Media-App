@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 
 const NewPost = ({posttitle,setposttitle,postbody,setpostbody,handlesubmit,handlepost}) => {
   return (
@@ -22,7 +22,7 @@ const NewPost = ({posttitle,setposttitle,postbody,setpostbody,handlesubmit,handl
         onChange={(e)=>setpostbody(e.target.value)}        
         /> 
         
-       <button onClick={handlesubmit} ><Link to='/' style={{color:'black',textDecoration:'none'}}>Submit</Link></button> 
+       <button onClick={handlesubmit} >Submit</button> 
        </form>
       
      
