@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import './index.css'
 import Nav from "./Nav";
@@ -17,6 +17,7 @@ import {format} from "date-fns";
 
 
 function App() {
+  const usenavigate=useNavigate()
   
  let [post,setpost]=useState( JSON.parse(localStorage.getItem("todo")))
 
@@ -32,13 +33,13 @@ function App() {
   localStorage.setItem( "todo",JSON.stringify(newlist));
  }
 
- let handlesubmit=(e)=>{
-  e.preventDefault()
+ let handlesubmit=()=>{
 
   let id1=(post.length)+1
   let date=format(new Date(),'MMMM dd,yyyy pp')
   let newpost={id:id1,title:posttitle,datatime:date,body:postbody}
   let newpost1=[...post,newpost];
+  usenavigate("/")
   
 setpost(newpost1);
  localStorage.setItem( "todo",JSON.stringify(newpost1))
@@ -56,7 +57,7 @@ return (
         path="/" 
         element = 
             { 
-              <Home post={post.filter((post) =>  ((post.body).toLowerCase()) .includes(search.toLowerCase()) || 
+              <Home post={post.filter((post) => ((post.body).toLowerCase()).includes(search.toLowerCase()) || 
               ((post.title).toLowerCase()).includes(search.toLowerCase()))  }/>
             }
       />
