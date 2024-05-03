@@ -30,7 +30,7 @@ function App() {
     post.id!==id 
   )
   setpost(newlist)
-  localStorage.setItem( "todo",JSON.stringify(newlist))
+  localStorage.setItem( "todo",JSON.stringify(newlist));
  }
 
  let handlesubmit=()=>{
