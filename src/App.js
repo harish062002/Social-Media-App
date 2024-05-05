@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Route, Routes, useNavigate } from "react-router-dom";
+
 import Home from "./Home";
 import './index.css'
 import Nav from "./Nav";
@@ -14,20 +15,43 @@ import Footer from "./Footer";
 
 import {format} from "date-fns";
 
+
+
+
 function App() {
-  const usenavigate=useNavigate()
+const usenavigate=useNavigate()
   
- let [post,setpost]=useState([])
+let [post,setpost]=useState( 
+ []
+    //  [
+    //   {
+    //     id:2,
+    //     title:"My first post",
+    //     datatime:"8:00",
+    //     body:"Placed in Tcs"
+    //   },
+    //   {
+    //     id:2,
+    //     title:"My first post",
+    //     datatime:"8:00",
+    //     body:"Placed in Tcs"
+    //   }
+  
+    // ]
+  
+  
+)
 
- let [search,setsearch]=useState('')
+let [search,setsearch]=useState('')
+let [posttitle,setposttitle]=useState('')
+let [postbody,setpostbody]=useState('')
 
- let [posttitle,setposttitle]=useState('')
- let [postbody,setpostbody]=useState('')
 
 
-  useEffect(()=>{
-setpost(JSON.parse(localStorage.getItem("todo")))
+useEffect(()=>{
+JSON.parse(localStorage.getItem("todo"))
 }, [] )
+
  let handledelete=(id)=>{
   let newlist=post.filter((post)=>
     post.id!==id 
@@ -35,6 +59,7 @@ setpost(JSON.parse(localStorage.getItem("todo")))
   setpost(newlist)
   localStorage.setItem( "todo",JSON.stringify(newlist));
  }
+
 
  let handlesubmit=()=>{
 
@@ -48,6 +73,7 @@ setpost(newpost1);
  localStorage.setItem( "todo",JSON.stringify(newpost1))
  
  }
+
 return (
      <div className="App">   
      
@@ -96,7 +122,7 @@ return (
     
      
     
-     </Routes>
+</Routes>
      <Footer/>
 
     </div>
