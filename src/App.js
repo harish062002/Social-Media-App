@@ -14,9 +14,6 @@ import Footer from "./Footer";
 
 import {format} from "date-fns";
 
-
-
-
 function App() {
   const usenavigate=useNavigate()
   
@@ -26,12 +23,6 @@ function App() {
 
  let [posttitle,setposttitle]=useState('')
  let [postbody,setpostbody]=useState('')
-
-
-
-
-
-
 
 
   useEffect(()=>{
