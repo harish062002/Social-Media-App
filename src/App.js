@@ -19,12 +19,23 @@ import {format} from "date-fns";
 function App() {
   const usenavigate=useNavigate()
   
- let [post,setpost]=useState( JSON.parse(localStorage.getItem("todo")))
+ let [post,setpost]=useState([])
 
  let [search,setsearch]=useState('')
 
  let [posttitle,setposttitle]=useState('')
  let [postbody,setpostbody]=useState('')
+
+
+
+
+
+
+
+
+  useEffect(()=>{
+JSON.parse(localStorage.getItem("todo"))
+}, [] )
  let handledelete=(id)=>{
   let newlist=post.filter((post)=>
     post.id!==id 
