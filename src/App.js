@@ -205,6 +205,7 @@ let [postbody,setpostbody]=useState('')
 
 
 useEffect(()=>{
+  localStorage.setItem("todo",JSON.stringify([]));
 setpost(JSON.parse(localStorage.getItem("todo")))
 }, [] )
 
