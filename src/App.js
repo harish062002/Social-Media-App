@@ -205,7 +205,7 @@ let [postbody,setpostbody]=useState('')
 
 
 useEffect(()=>{
-setpost(JSON.parse(localStorage.getItem("todo")))
+JSON.parse(localStorage.getItem("todo"))
 }, [] )
 
  let handledelete=(id)=>{
