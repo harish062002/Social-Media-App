@@ -19,6 +19,7 @@ const PostPage = ({post,handledelete}) => {
           <p className='postDate'>{posts.datatime}</p> 
           <p className='postBody'>{(posts.body).length <= 25 ? posts.body :`${(posts.body).slice(0,25)}..`}</p>
           <button onClick={()=>handledelete(posts.id)}><Link to='/' style={{color:'black',textDecoration:'none'}}>Delete Post</Link></button>
+          <Link to={`/Edit/${posts.id}` }><button>Edit Post</button></Link>
         </>
     }
     { !post &&
