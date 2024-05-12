@@ -178,22 +178,22 @@ function App() {
 const usenavigate=useNavigate()
   
 let [post,setpost]=useState( 
- // []
-     [
-      {
-        id:2,
-        title:"My first post",
-        datatime:"8:00",
-        body:"Placed in Tcs"
-      },
-      {
-        id:2,
-        title:"My first post",
-        datatime:"8:00",
-        body:"Placed in Tcs"
-      }
+ []
+    //  [
+    //   {
+    //     id:2,
+    //     title:"My first post",
+    //     datatime:"8:00",
+    //     body:"Placed in Tcs"
+    //   },
+    //   {
+    //     id:2,
+    //     title:"My first post",
+    //     datatime:"8:00",
+    //     body:"Placed in Tcs"
+    //   }
   
-    ]
+    // ]
   
   
 )
@@ -205,7 +205,7 @@ let [postbody,setpostbody]=useState('')
 
 
 useEffect(()=>{
-JSON.parse(localStorage.getItem("todo"))
+setpost(JSON.parse(localStorage.getItem("todo")))
 }, [] )
 
  let handledelete=(id)=>{
