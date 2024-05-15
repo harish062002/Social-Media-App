@@ -51,7 +51,7 @@ let [editpostbody,seteditpostbody]=useState('')
 useEffect(()=>{
   
 let x=JSON.parse(localStorage.getItem("todo"))
-  (!x)?(localStorage.setItem('todo',JSON.stringify([  ])): setpost(JSON.parse(localStorage.getItem("todo")))
+  (!x)?(  localStorage.setItem('todo',JSON.stringify([  ]))): setpost(JSON.parse(localStorage.getItem("todo")))
 }, [] )
 
  let handledelete=(id)=>{
